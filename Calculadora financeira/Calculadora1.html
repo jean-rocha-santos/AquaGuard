@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <h1 style="color: rgb(62, 124, 191);">Calculadora financeira</h1>
+    <h2>Simule aqui resultados da nossa solução</h2>
+    Já sofreu com algum alagamento? Se sim, nos conte quantas vezes: 
+
+    <input type="number" id="input_numeros_enchentes" placeholder="350980"><br><br>
+    Insira seu faturamento anual: 
+    <input type="number" id="input_faturamento" placeholder="350980"><br><br>
+
+    <button onclick="anual()" style="border-radius: 12px; border-color: rgb(8, 12, 37); background-color: rgb(150, 175, 222); color: rgb(4, 4, 4);">Calcular prejuízo</button>
+</div> <br>
+    <div id="div_prejuizo" style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></div> 
+
+</body>
+</html>
+ <script>
+     function anual() {
+     var qtdenchentes = Number(input_numeros_enchentes.value)
+     var faturamento = Number(input_faturamento.value)
+     var prejuizo = (faturamento/365)*0.20
+     
+    div_prejuizo.innerHTML =`
+    Com base em seu faturamento, caso sofra com um 
+    alagamento seu prejuizo seria de aproximadamente R$${prejuizo}` 
+
+    if (qtdenchentes > 0) {
+        div_prejuizo.innerHTML =`
+        Com nosso Aquaguard você economizaria cerca de R$${prejuizo*qtdenchentes} por dia
+        `
+    }
+
+    
+    }
+ </script>
