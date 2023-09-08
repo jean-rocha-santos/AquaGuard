@@ -58,3 +58,5 @@ desc dadosEmpresa;
 
 alter table dadosEmpresa modify column cpnj_empresa int unique;
 alter table dadosEmpresa rename column cpnj_empresa to cnpj_empresa;
+
+drop database aquaguard1;
